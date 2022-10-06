@@ -1,0 +1,50 @@
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.header th:last-child {
+  border-top-right-radius: 10px;
+}
+
+nz-table {
+  max-width: 750px;
+}
+
+td {
+  max-width: 210px;
+  flex-wrap: wrap;
+}
+
+th.ant-table-cell {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  background: rgba(47, 144, 171, 0.459);
+}
+
+.header th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.active-row:hover {
+  font-weight: bold;
+}
+
+.table-body {
+  max-width: 180px;
+}
+
+.button {
+  border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+:host ::ng-deep .ant-table-footer {
+  background-color: white;
+}

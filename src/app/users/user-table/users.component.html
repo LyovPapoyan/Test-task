@@ -1,0 +1,28 @@
+<div class="table-wrapper">
+<nz-table class="table" #basicTable nzFrontPagination="false" [nzFooter]="footer" [nzData]="usersList">
+  <thead>
+    <tr class="header">
+      <th nzWidth="210px" nzAlign="center">Имя</th>
+      <th nzWidth="210px" nzAlign="center">Фамилия</th>
+      <th nzWidth="210px">Карта</th>
+      <th nzWidth="70px">Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-body" *ngFor="let data of usersList let index = index" class="active-row">
+      <td nzAlign="center">{{data.name}}</td>
+      <td nzAlign="center">{{data.lastname}}</td>
+      <td class="td">{{data.card}}</td>
+      <td>
+        <button (click)="onRemoveUser(index)" nz-button nzType="primary" class="button" nzDanger>Удалить</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+</div>
+
+<ng-template #footer>
+  <div class="footer">
+    <button (click)="onAddUser()" nz-button nzType="primary" class="button">Добавить</button>
+  </div>
+</ng-template>

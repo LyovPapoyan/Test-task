@@ -1,0 +1,26 @@
+<form nz-form [formGroup]="userForm" nzLayout="vertical">
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="email">Имя</nz-form-label>
+    <nz-form-control [nzErrorTip]="validationMessage">
+      <input nz-input formControlName="name">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="email">Фамилия</nz-form-label>
+    <nz-form-control [nzErrorTip]="validationMessage">
+      <input nz-input formControlName="lastname">
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired nzFor="email">Карта</nz-form-label>
+    <nz-form-control [nzErrorTip]="validationMessage">
+      <input nz-input formControlName="card">
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<ng-template #validationMessage let-control>
+  <ng-container *ngIf="control.hasError('required')">
+    Это поле не может быть пустым
+  </ng-container>
+</ng-template>
